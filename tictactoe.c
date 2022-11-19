@@ -25,13 +25,21 @@ int main()
         printf("Enter input of pl1\n");
         scanf("%d%d",&x,&y);
         if(a[x][y] == '9')
-        a[x][y] = '1';
+        {
+              a[x][y] = '1';
+        }
+        else{
+            printf("invalid input\n");
+            i--;
+        }
+        
 
         if(x==y || x + y == n -1 )
         {
 
             sum_d += a[x][y];
         }
+
 
     }
     else{
@@ -42,6 +50,11 @@ int main()
         {
             a[x][y] = '0' ;
 
+        }
+        else
+        {
+            printf("invalid input\n");
+            i--;
         }
 
         if (x==y || x+ y == n-1)
