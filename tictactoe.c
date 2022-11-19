@@ -53,7 +53,7 @@ int main()
 
             sum_d += a[x][y];
         }
-        else if(x + y == n-1)
+         if(x + y == n-1)
         {
             sum_f += a[x][y];
         }
@@ -79,7 +79,7 @@ int main()
         {
             sum_d += a[x][y];
         }
-        else if(x + y == n -1)
+         if(x + y == n -1)
         {
             sum_f += a[x][y];
         }
