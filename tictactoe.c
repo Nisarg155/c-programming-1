@@ -1,6 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+void dis(int *p, int n)
+{
+    for (int i = 1; i <= n*n; i++)
+    {
+        printf("%c ",*p);
+        p++;
+        if(i%3==0)
+        printf("\n");
+    }
+    
+}
+
 int main()
 {
     int  n ;
@@ -11,9 +23,10 @@ int main()
    for(i=0 ;i<n;i++){
     for(j=0;j<n;j++)
     {
-        a[i][j] = '9';
+        a[i][j] = '*';
     }
    }
+   dis(a,n);
 
    
 
@@ -24,7 +37,7 @@ int main()
     {
         printf("Enter input of pl1\n");
         scanf("%d%d",&x,&y);
-        if(a[x][y] == '9')
+        if(a[x][y] == '*')
         {
               a[x][y] = '1';
         }
@@ -46,7 +59,7 @@ int main()
         printf("Enter the input of pl2\n");
         scanf("%d%d",&x,&y);
 
-        if(a[x][y]=='9')
+        if(a[x][y]=='*')
         {
             a[x][y] = '0' ;
 
@@ -63,6 +76,7 @@ int main()
         }
         
     }
+    dis(a,n);
 
     if(i>=2)
     {
