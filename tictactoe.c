@@ -5,9 +5,17 @@ int main()
 {
     int  n ;
    scanf("%d",&n);
+    int i,j,x,y,sum_r,sum_c,sum_d = '0';
 
-   int a[n][n] = '_';
-   int i,j,x,y,sum_r,sum_c,sum_d;
+   int a[n][n] ;
+   for(i=0 ;i<n;i++){
+    for(j=0;j<n;j++)
+    {
+        a[i][j] = '9';
+    }
+   }
+
+   
 
    for(i=0;i<n*n;i++)
    {
@@ -16,7 +24,7 @@ int main()
     {
         printf("Enter input of pl1\n");
         scanf("%d%d",&x,&y);
-        if(a[x][y] == '_')
+        if(a[x][y] == '9')
         a[x][y] = '1';
 
     }
@@ -24,7 +32,7 @@ int main()
         printf("Enter the input of pl2\n");
         scanf("%d%d",&x,&y);
 
-        if(a[x][y]=='_')
+        if(a[x][y]=='9')
         {
             a[x][y] = '0' ;
 
@@ -33,11 +41,13 @@ int main()
 
     if(i>=2)
     {
+        
         for(int r = 0;r<n;r++)
         {
             sum_r = '0' ;
             sum_c = '0';
-             sum_d  = '0';
+            sum_d = '0' ;
+             
              
                  for(int c = 0;c<n;c++)
             {
@@ -46,6 +56,7 @@ int main()
                 if(r==c)
                 {
                     sum_d += a[r][c];
+                    printf("        %d      ",sum_d );
 
                 }
 
@@ -56,8 +67,16 @@ int main()
             {
                 if(sum_r == 192 || sum_c == 192 || sum_d == 192)
                 {
-                    printf("player 1 wins");
+                    printf("player 2 wins");
                     exit(0);
+                }
+                else if(sum_c == 195 || sum_r == 195 || sum_d == 195)
+                {
+                    printf("player 1 wins ");
+                    exit(0);
+                }
+                else{
+                    printf("draw");
                 }
             }
 
