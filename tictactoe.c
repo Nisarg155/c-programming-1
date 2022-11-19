@@ -18,7 +18,7 @@ int main()
     int  n ;
    scanf("%d",&n);
     int i,j,x,y,sum_r,sum_c,sum_d = '0',sum_f= '0';
-    int z  = 48*(n+1), y = 48 +n*49;
+    int z  = 48*(n+1), w = 48 +n*49;
 
    int a[n][n] ;
    for(i=0 ;i<n;i++){
@@ -106,14 +106,14 @@ int main()
 
             }
 
-            if(sum_r == x|| sum_c == x||sum_r==y||sum_c==y||sum_d == y || sum_d==x)
+            if(sum_r == z|| sum_c == z||sum_r==w||sum_c==w||sum_d == w || sum_d==z || sum_f == z  || sum_f == w)
             {
-                if(sum_r == x || sum_c == x || sum_d == x || sum_f == x)
+                if(sum_r == z || sum_c == z || sum_d == z || sum_f == z)
                 {
                     printf("player 2 wins");
                     exit(0);
                 }
-                else if(sum_c == y || sum_r == y || sum_d == y || sum_f == y)
+                else if(sum_c == w || sum_r == w || sum_d == w || sum_f == w)
                 {
                     printf("player 1 wins ");
                     exit(0);
