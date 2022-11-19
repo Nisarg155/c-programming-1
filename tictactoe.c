@@ -27,6 +27,12 @@ int main()
         if(a[x][y] == '9')
         a[x][y] = '1';
 
+        if(x==y || x + y == n -1 )
+        {
+
+            sum_d += a[x][y];
+        }
+
     }
     else{
         printf("Enter the input of pl2\n");
@@ -37,6 +43,12 @@ int main()
             a[x][y] = '0' ;
 
         }
+
+        if (x==y || x+ y == n-1)
+        {
+            sum_d += a[x][y];
+        }
+        
     }
 
     if(i>=2)
@@ -46,19 +58,14 @@ int main()
         {
             sum_r = '0' ;
             sum_c = '0';
-            sum_d = '0' ;
+            
              
              
                  for(int c = 0;c<n;c++)
             {
                 sum_r += a[r][c];
                 sum_c += a[c][r];
-                if(r==c)
-                {
-                    sum_d += a[r][c];
-                    printf("        %d      ",sum_d );
-
-                }
+              
 
 
             }
@@ -75,10 +82,9 @@ int main()
                     printf("player 1 wins ");
                     exit(0);
                 }
-                else{
-                    printf("draw");
-                }
+               
             }
+          
 
             
 
@@ -88,6 +94,11 @@ int main()
 
 
 
+   }
+
+   if(i==9)
+   {
+    printf("draw");
    }
    
    
