@@ -30,15 +30,17 @@ int main()
     }
 
     int mat3[r1][c2];
+
+    for(int k = 0 ;k<r1;k++){
     for(i=0;i<r1;i++)
     {
         for(j=0;j<c2;j++)
         {
-            mat3[i][j] += (mat1[i][j])*(mat2[j][i]);
-            printf("The %d%d element of matrix is: %d\n",i+1,j+1,mat3[i][j]);
-        }
+            mat3[k][i] += (mat1[i][j])*(mat2[j][i]);
+                   }
+         printf("The %d%d element of matrix is: %d\n",k+1,i+1,mat3[k][i]);
     }
-
+    }
     }
     else
     printf("The matrix multliplication is not possible");

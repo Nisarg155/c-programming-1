@@ -7,7 +7,7 @@ void dis(int *p, int n)
     {
         printf("%c ",*p);
         p++;
-        if(i%3==0)
+        if(i%n==0)
         printf("\n");
     }
     
@@ -16,9 +16,10 @@ void dis(int *p, int n)
 int main()
 {
     int  n ;
-   scanf("%d",&n);
-    int i,j,x,y,sum_r,sum_c,sum_d = '0',sum_f= '0';
-    int z  = 48*(n+1), y = 48 +n*49;
+    printf("enter dimenction:\n");
+    scanf("%d",&n);
+    int i,j,x,y,sum_r,sum_c,sum_d = '0',sum_f='0';
+    
 
    int a[n][n] ;
    for(i=0 ;i<n;i++){
@@ -28,9 +29,7 @@ int main()
     }
    }
    dis(a,n);
-
-   
-
+    printf("player 1 will input 1 and player 2 will input 0\n");
    for(i=0;i<n*n;i++)
    {
 
@@ -48,14 +47,14 @@ int main()
         }
         
 
-        if(x==y  )
+        if(x==y)
         {
 
             sum_d += a[x][y];
         }
-        else if(x + y == n-1)
+        if(x+y==n-1)
         {
-            sum_f += a[x][y];
+            sum_f+=a[x][y];
         }
 
 
@@ -75,68 +74,52 @@ int main()
             i--;
         }
 
-        if (x==y )
+        if (x==y)
         {
             sum_d += a[x][y];
         }
-        else if(x + y == n -1)
+        if(x+y==n-1)
         {
-            sum_f += a[x][y];
+            sum_f+=a[x][y];
         }
         
     }
     dis(a,n);
 
-    if(i>=2)
+    if(i>=n-1)
     {
         
         for(int r = 0;r<n;r++)
         {
-            sum_r = '0' ;
+            sum_r = '0';
             sum_c = '0';
             
-             
-             
                  for(int c = 0;c<n;c++)
+                {
+                    sum_r += a[r][c];
+                    sum_c += a[c][r];
+                }
+
+            if(sum_r == 48*(n+1) || sum_c == 48*(n+1)||sum_r==49*(n)+48||sum_c==49*(n)+48||sum_d == 49*(n)+48 || sum_d==48*(n+1)||sum_f==48*(n+1)||sum_f==49*n+4)
             {
-                sum_r += a[r][c];
-                sum_c += a[c][r];
-              
-
-
-            }
-
-            if(sum_r == x|| sum_c == x||sum_r==y||sum_c==y||sum_d == y || sum_d==x)
-            {
-                if(sum_r == x || sum_c == x || sum_d == x || sum_f == x)
+                if(sum_r == 48*(n+1) || sum_c == 48*(n+1) || sum_d == 48*(n+1)||sum_f==48*(n+1))
                 {
                     printf("player 2 wins");
                     exit(0);
                 }
-                else if(sum_c == y || sum_r == y || sum_d == y || sum_f == y)
+                else if(sum_c == 49*(n)+48 || sum_r == 49*(n)+48 || sum_d == 49*(n)+48||sum_f==49*n+4)
                 {
                     printf("player 1 wins ");
                     exit(0);
                 }
                
             }
-          
-
-            
-
         }
-
     }
-
-
-
    }
 
-   if(i==9)
+   if(i==n*n)
    {
     printf("draw");
-   }
-   
-   
-
+    }
 }
