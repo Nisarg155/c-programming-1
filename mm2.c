@@ -61,6 +61,11 @@ for(l=0;l<n;l++)
                         
                         
                     }
+                    else
+                    {
+                        printf("The repeting value is : %d",rep[0]);
+
+                    }
                    
                 }
             }
