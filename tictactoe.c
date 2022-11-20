@@ -38,7 +38,7 @@ int main()
     {
         printf("Enter input of pl1\n");
         scanf("%d%d",&x,&y);
-        if(a[x][y] == '*')
+        if(a[x][y] == '*' && x<n && y <n)
         {
               a[x][y] = '1';
         }
@@ -48,12 +48,12 @@ int main()
         }
         
 
-        if(x==y  )
+        if(x==y && x<n && y <n )
         {
 
             sum_d += a[x][y];
         }
-         if(x + y == n-1)
+         if(x + y == n-1 && x <n && y < n)
         {
             sum_f += a[x][y];
         }
@@ -64,7 +64,7 @@ int main()
         printf("Enter the input of pl2\n");
         scanf("%d%d",&x,&y);
 
-        if(a[x][y]=='*')
+        if(a[x][y]=='*' && x<n && y<n )
         {
             a[x][y] = '0' ;
 
@@ -75,11 +75,11 @@ int main()
             i--;
         }
 
-        if (x==y )
+        if (x==y && x<n && y<n )
         {
             sum_d += a[x][y];
         }
-         if(x + y == n -1)
+         if(x + y == n -1 && x <n && y<n)
         {
             sum_f += a[x][y];
         }
