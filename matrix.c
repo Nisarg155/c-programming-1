@@ -2,7 +2,7 @@
 
 int main()
 {
-    int r1,c1,r2,c2,i,j;
+    int r1,c1,r2,c2,i,j,sum =0,k;
     printf("Enter the dimensions of first matrix rows and columns \n");
     scanf("%d%d",&r1,&c1);
     printf("Enter the dimensions  of second matrix rows and columns\n");
@@ -31,17 +31,35 @@ int main()
 
     int mat3[r1][c2];
 
-    for(int k = 0 ;k<r1;k++){
-    for(i=0;i<r1;i++)
+ 
+for ( i = 0; i < r1; i++)
+{
+    for ( j = 0; j < c2; j++)
     {
-        for(j=0;j<c2;j++)
+         sum = 0;
+        for ( k = 0; k < c2; k++)
         {
-            mat3[k][i] += (mat1[i][j])*(mat2[j][i]);
-                   }
-         printf("The %d%d element of matrix is: %d\n",k+1,i+1,mat3[k][i]);
+            sum += mat1[i][k]*mat2[k][j] ;
+        }
+
+        mat3[i][j] = sum;
+        
     }
+    
+}
+
+
+    for ( i = 0; i < r1; i++)
+    {
+        for ( j = 0; j < c2; j++)
+        {
+            printf("the mult of pos  (%d%d) is :%d \n",i+1,j+1,mat3[i][j]);
+        }
+        
     }
+    
     }
+    
     else
     printf("The matrix multliplication is not possible");
 }
