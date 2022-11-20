@@ -4,7 +4,7 @@
 #define MAX 10
 int main()
 {
-    int count = 0,i=0,turn=0;
+    int count = 0,i=0,turn=0,val ;
     int a[BLOCKS] = {0};
     int pl1[BLOCKS] = {0} , pl2[BLOCKS] = {0};
 
@@ -14,6 +14,7 @@ int main()
         {
             turn = 1 ;
             printf("\n turn of player 1");
+            val = 
 
         }
         
