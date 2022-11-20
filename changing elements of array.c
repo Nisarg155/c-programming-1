@@ -2,12 +2,8 @@
 
 int main()
 {
-    int aD;
-    printf("Enter the dimensions of array  1D or 2D :  ");
-    scanf("%d",&aD);
-
-    if(aD == 1)
-    {
+    
+    
         int n;
         printf("Enter the length of array  :");
         scanf("%d",&n);
@@ -55,12 +51,5 @@ int main()
         printf("The change is not possible");
       }
             
-        
-        
-        
-
-        
-        
-    }
     
 }
