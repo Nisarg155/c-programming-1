@@ -75,5 +75,11 @@ for(l=0;l<n;l++)
 
     
 }
+
+if (count==0)
+{
+    printf("No common element are there are there ");
+}
+
 return 0;
 }
