@@ -11,6 +11,7 @@ int main()
     {
         printf("Enter the %d element : ", i + 1);
         scanf("%d", &a[i]);
+        
     }
 
     for (int i = 0; i < n; i++)
