@@ -26,14 +26,24 @@ int main()
     int len,flag = 0;
     for (int i = 0; i < n; i++)
     {
-        len = strlen(search_name[i]);
+        
         flag = 0;
         for (int j = 0; j < n2; j++)
         {
+            for (int l = 0;l<strlen(stu_list[j]); l++)
+            {
+                if (stu_list[j][l] == 44)
+                {
+                    len = l-1;
+                    break;
+                }
+                
+            }
+            
             if (strncmp(search_name[i], stu_list[j], len) == 0)
             {
                 flag = 1;
-                for (int k = len + 1; k < strlen(stu_list[j]); k++)
+                for (int k = len + 2; k < strlen(stu_list[j]); k++)
                 {
                     if (stu_list[j][k] == '\0')
                     {
