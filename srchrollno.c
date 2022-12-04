@@ -23,6 +23,28 @@ int main()
     {
         gets(stu_list[i]);
     }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < srrlen(search_name[i]); j++)
+        {
+            if (isupper(search_name[i][j]))
+            {
+                search_name[i][j] += 32;
+            }
+        }
+    }
+        for (int i = 0; i < n2; i++)
+    {
+        for (int j = 0; j < srrlen(stu_list[i]); j++)
+        {
+            if (isupper(stu_list[i][j]))
+            {
+                stu_list[i][j] += 32;
+            }
+        }
+    }
+
+    
     int len,flag = 0;
     for (int i = 0; i < n; i++)
     {
@@ -49,18 +71,19 @@ int main()
                     {
                         break;
                     }
-                    else if (stu_list[j][k] != 32)                    
+                    else if (stu_list[j][k] != 32 && stu_list[j][k] != '\t')                    
                     {
                         printf("%c",stu_list[j][k]);
                     }
                     
                 }
+                printf("\n");
                 
             }
     
         }
         
         if(! flag )
-        printf("\nNOT FOUND");
+        printf("NOT FOUND\n");
     }
 }
