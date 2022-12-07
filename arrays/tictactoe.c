@@ -56,7 +56,7 @@ int main()
                 sum_f += a[x][y];
             }
         }
-        else
+        else // player 2 turn 
         {
             printf("Enter the input of pl2\n");
             scanf("%d%d", &x, &y);
