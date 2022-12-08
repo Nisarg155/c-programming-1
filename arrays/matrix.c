@@ -1,60 +1,56 @@
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
 int main()
 {
-    int r1, c1, r2, c2, i, j, sum = 0, k;
-    printf("Enter the dimensions of first matrix rows and columns \n");
-    scanf("%d%d", &r1, &c1);
-    printf("Enter the dimensions  of second matrix rows and columns\n");
-    scanf("%d%d", &r2, &c2);
-
-    if (c1 == r2)
+    int a, b, c, d;
+    scanf("%d%d%d%d", &a, &b, &c, &d);
+    int mat1[a][b];
+    int mat2[c][d];
+    for (int i = 0; i < a; i++)
     {
-        int mat1[r1][c1];
-        int mat2[r2][c2];
-        for (i = 0; i < r1; i++)
+        for (int j = 0; j < b; j++)
         {
-            for (j = 0; j < c1; j++)
-            {
-                printf("Enter the element %d%d : ", i + 1, j + 1);
-                scanf("%d", &mat1[i][j]);
-            }
-        }
-
-        for (i = 0; i < r2; i++)
-        {
-            for (j = 0; j < c2; j++)
-            {
-                printf("Enter the element of %d%d :", i + 1, j + 1);
-                scanf("%d", &mat2[i][j]);
-            }
-        }
-
-        int mat3[r1][c2];
-
-        for (i = 0; i < r1; i++)
-        {
-            for (j = 0; j < c2; j++)
-            {
-                sum = 0;
-                for (k = 0; k < c2; k++)
-                {
-                    sum += mat1[i][k] * mat2[k][j];
-                }
-
-                mat3[i][j] = sum;
-            }
-        }
-
-        for (i = 0; i < r1; i++)
-        {
-            for (j = 0; j < c2; j++)
-            {
-                printf("the mult of pos  (%d%d) is :%d \n", i + 1, j + 1, mat3[i][j]);
-            }
+            scanf("%d", &mat1[i][j]);
         }
     }
+    for (int i = 0; i < c; i++)
+    {
+        for (int j = 0; j < d; j++)
+        {
+            scanf("%d", &mat2[i][j]);
+        }
+    }
+    if (c != b)
+    {
+        printf("MULTIPLICATION NOT POSSIBLE");
+        exit(0);
+    }
+    int mul[a][d];
+    printf("%d\t%d\n", a, d);
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < d; j++)
+        {
+            mul[i][j] = 0;
+            for (int k = 0; k < c; k++)
+            {
+                mul[i][j] += mat1[i][k] * mat2[k][j];
+            }
+       
+        }
+    }
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < d; j++)
+        {
+            printf("%d\t", mul[i][j]);
+        }
+        printf("\n");
+    }
 
-    else
-        printf("The matrix multliplication is not possible");
+ 
+return 0;
 }
