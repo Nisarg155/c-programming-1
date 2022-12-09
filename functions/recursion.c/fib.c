@@ -5,19 +5,14 @@ int fib(int a ,int b ,int n)
     static int count = 0;
     if (count == n)
     {
-        return b+a;
+        return 0;
     }
-    else{
-        count++;
-        
-        return fib(b,a+b,n) - b;
+    
+        count++;        
+        fib(b,a+b,n);
         printf("%d ",b);
-    }
     
-    
-
 }
-
 int main()
 {
     int n,a=0,b = 1;

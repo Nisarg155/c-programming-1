@@ -1,17 +1,18 @@
 #include<stdio.h>
 
-int fib(int a ,int b ,int n)
+int   fib(int a ,int b ,int n)
 {
     static int count = 0;
     if (count == n)
     {
-        return 0;
+        return;
     }
     else{
         count++;
+        printf("%d  ",b);
+        return fib(b,a+b,n);    
         
-        return fib(b,a+b,n);
-        printf("%d ",a+b);
+        
     }
     
     
