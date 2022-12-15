@@ -33,13 +33,11 @@ int main()
         {
 
             for (int j = 0; j < c2; j++)
-            {
-                sum = 0;
-                for (int k = 0; k < c1; k++)
+            {    
+                for (int k = 0; k < c1 ; k++)
                 {
-                    sum += a[i][k] * b[k][j];
+                    c[i][j] += a[i][k]*b[k][j];    
                 }
-                c[i][j] = sum;
             }
         }
         for (int i = 0; i < r1; i++)
