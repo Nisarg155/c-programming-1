@@ -1,17 +1,18 @@
-#include <stdio.h>
-
-int print(int n)
+#include<stdio.h>
+void print(int n)
 {
-    if (n == 50)
-        return 1;
-    else
-        printf("%d\n", n++);
-
-    return print(n);
+    if(n==0)
+    return;
+    
+    print(n-1);
+    printf("%d ",n);
 }
 
-int main()
+
+int main() 
 {
-    int n = 1;
+    int n;
+    scanf("%d",&n);
     print(n);
+    return 0;
 }
