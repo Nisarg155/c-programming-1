@@ -5,27 +5,59 @@
 
 int main() 
 {
-    char str[3][40], b[15];
-    int i ,count = 0;
+    char str[3][40];
+    int i,j,k,l,m,count = 0,len,space,b[6],ind;
     for (int i = 0; i < 3; i++)
     {
         gets(str[i]);
     }
-   
-    int ind = 0;
-    for ( i = 0; i < 3; i++)
+    for ( i = 0; i<3; i++)
     {
-        ind = 0;
-    int  k = 0;
-        for (int j = 0; j<strlen(str[i])+1; j++)
-        {if (str[i][j] != 32 && str[i][j] != '.' && str[i][j] != '\0')
-        ind++;
-        else{
-           b[k] = ind;
-            k++;
+        len = strlen(str[i]);
+        if(str[i][len] != '.' )
+        {
+            space = 0;
+            for ( j = 0; j < len; j++)
+            {
+                b[0] = 0;
+                if(str[i][j] == ' ')
+                {
+                    space++;
+                    b[space] = j;
+                }
+                if(j == len-1 )
+                b[space] = len;
+            }
+            if(space == 0)
+            {
+                printf("%c",str[i][len-1]);
+                for ( k = 0; k < len-1; k++)
+                {
+                    printf("%c",str[i][k]);
+                }
+                printf("ly");
+            }
+            else
+            {
+                for ( l = 0; l < space+1; l++)
+                {
+                    len = b[l+1];
+                        printf("%c",str[i][len -1]);
+                    for ( m = b[l]; m <b[l+1] -1 ; m++)
+                    {
+                        printf("%c",str[i][m]);
+                    }
+                    printf("ly ");
+                }
+            }
+
+            
         }
-        }
+
+
     }
+    
+    
     
     
     
