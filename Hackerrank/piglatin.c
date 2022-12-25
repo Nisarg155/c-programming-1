@@ -6,7 +6,7 @@
 int main() 
 {
     char str[3][40];
-    int i,j,k,l,m,count = 0,len,space,b[6],ind;
+    int i,j,k,l,m,count = 0,len,space = 0,b[6],ind,len1;
     for (int i = 0; i < 3; i++)
     {
         gets(str[i]);
@@ -20,7 +20,7 @@ int main()
             for ( j = 0; j < len; j++)
             {
                 b[0] = 0;
-                if(str[i][j] == ' ')
+                if(str[i][j] == 32)
                 {
                     space++;
                     b[space] = j;
@@ -41,8 +41,7 @@ int main()
             {
                 for ( l = 0; l < space+1; l++)
                 {
-                    len = b[l+1];
-                        printf("%c",str[i][len -1]);
+                    printf("%c",str[i][b[l+1] - 1]);
                     for ( m = b[l]; m <b[l+1] -1 ; m++)
                     {
                         printf("%c",str[i][m]);
