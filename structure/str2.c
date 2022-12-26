@@ -86,8 +86,5 @@ int main()
         printf(RED"%d Colour :- %s length :- %.3f \n",i+1,b[i].colour,b[i].length);
 
     }
-    
-    
-
     return 0;
 }
