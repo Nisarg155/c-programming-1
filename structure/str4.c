@@ -1,21 +1,19 @@
 #include<stdio.h>
-void fun( result r1  )
+typedef struct tree_info
 {
-    /* data */
+    char name[20];
+    int age ;
+} tree;
+typedef struct park_info
+{
+    int fountains;
+    tree t[]
 };
+
 
 
 int main() 
 {
-    typedef struct exam_info{
-        int roll ;
-        char name[20];
-        struct exam_result{
-            int grades ;
-        } marks;
-    } result ;
-    struct exam_result marks = {50};
-    result r1 = {03,"nisarg"};
-    fun(r1);
+    
     return 0;
 }
