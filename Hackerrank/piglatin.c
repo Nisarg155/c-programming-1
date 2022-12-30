@@ -15,8 +15,6 @@ int main()
     {
         printf("\n");
         len = strlen(str[i]);
-        if(str[i][len] != '.' )
-        {
             space = 0;
 
             for ( j = 0; j < len; j++)
@@ -43,6 +41,18 @@ int main()
                 }
                 printf("ly");
             }
+            else if (str[i][len -1] == '.')
+            {
+                x = b[space] +1;
+                printf("%c",str[i][len-2]);
+                for (int m = x; m < len -2; m++)
+                {
+                    printf("%c",str[i][m]);
+                }
+                printf("ly");
+                
+            }
+
             else 
             {
                 x = b[space] +1;
@@ -57,7 +67,7 @@ int main()
 
 
             
-        }
+        
 
 
     }
