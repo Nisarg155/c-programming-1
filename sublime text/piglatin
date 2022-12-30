@@ -37,7 +37,7 @@ int main()
                 }
                 printf("ly");
             }
-           /* else
+            else
             {
                 for ( l = 0; l < space+1; l++)
                 {
@@ -48,7 +48,7 @@ int main()
                     }
                     printf("ly ");
                 }
-            }*/
+            }
 
             
         }
