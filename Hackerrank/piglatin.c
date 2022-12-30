@@ -6,27 +6,33 @@
 int main() 
 {
     char str[3][40];
-    int i,j,k,l,m,count = 0,len,space = 0,b[6],ind,len1;
+    int i,j,k,l,m,count = 0,len,space = 0,b[6],ind,len1,x;
     for (int i = 0; i < 3; i++)
     {
         gets(str[i]);
     }
     for ( i = 0; i<3; i++)
     {
+        printf("\n");
         len = strlen(str[i]);
         if(str[i][len] != '.' )
         {
             space = 0;
+
             for ( j = 0; j < len; j++)
-            {
+            {     
                 b[0] = 0;
                 if(str[i][j] == 32)
                 {
+                    printf("%c",str[i][j-1]);
+                    for (int l = b[space]; l < j-1; l++)
+                    {
+                        printf("%c",str[i][l]);
+                    }
+                    printf("ly ");  
                     space++;
                     b[space] = j;
-                }
-                if(j == len-1 )
-                b[space] = len;
+                }  
             }
             if(space == 0)
             {
@@ -37,18 +43,18 @@ int main()
                 }
                 printf("ly");
             }
-           /* else
+            else 
             {
-                for ( l = 0; l < space+1; l++)
+                x = b[space] +1;
+                printf("%c",str[i][len-1]);
+                for (int  l = x; l < len-1; l++)
                 {
-                    printf("%c",str[i][b[l+1] - 1]);
-                    for ( m = b[l]; m <b[l+1] -1 ; m++)
-                    {
-                        printf("%c",str[i][m]);
-                    }
-                    printf("ly ");
+                    printf("%c",str[i][l]);
                 }
-            }*/
+                printf("ly");
+                
+            }
+
 
             
         }
