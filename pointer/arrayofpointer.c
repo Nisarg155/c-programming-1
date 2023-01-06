@@ -31,9 +31,9 @@ int main()
     {
         len = strlen(p[i]);
         len--;
-        temp = *(*(p+i));
-        *(*(p + i)) = *(*(p+i) + len);
-        *( *(p + i ) + len) = temp; 
+        temp = *p[i];
+        *p[i] = p[i][len];
+        p[i][len] = temp; 
     }
     // swamping the pointer based on character of all string in ascending sorted order
     
