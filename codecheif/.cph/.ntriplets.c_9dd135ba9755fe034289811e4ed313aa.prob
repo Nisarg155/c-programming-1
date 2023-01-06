@@ -1,0 +1,1 @@
+{"name":"Local: ntriplets","url":"d:\\all files\\c programming 1\\codecheif\\ntriplets.c","tests":[{"id":1672848629903,"input":"3\n30\n24\n3","output":"2 3 5\n2 6 4\n-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\all files\\c programming 1\\codecheif\\ntriplets.c","group":"local","local":true}
