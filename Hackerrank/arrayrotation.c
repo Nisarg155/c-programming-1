@@ -2,49 +2,60 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-
-void rotate_array(char str[], int number_of_chars_to_rotate)
+void rotation(char str[],char str_i[],int len,int rot)
 {
-    int n = number_of_chars_to_rotate, len = strlen(str);
-    // Write code here to rotate characters in the array by number_of_chars_to_rotate
-    // Use array traversing method
-    // Do not use array indexation method or pointer offset method.
-        char *p = NULL;
-    int odd = 0 , even = 0 ;
-    char eve[20] , od[20];
-    for (int i = 0; i < n; i++)
-    {
-        if(i%2)
-        eve[even++] = str[i];
-        else
-        od[odd++] = str[i];
-    }
+       int n = rot*2,count = 0;
     
-
-    sort(eve,str,even);
+        char *p = NULL;
+    if(n> len){
+        n = n%len;
+    }
     p = &str[len-n];
     for(int i = 0;i<n;i++,p++)
     {
-        printf("%c",*p);
+        str_i[count++] = *p;
     }
-    p = &str[0];
+           p = &str[0];
     for(int i = 0;i<len-n;i++,p++)
     {
-        printf("%c",*p);
+        str_i[count++] = *p;
     }
+}
+void rotate_array(char str[], int even_index_rotations, int odd_index_rotations)
+{
+    // Write code here to rotate characters at even index by even_index_rotations
+    // and characters at odd index by odd_index_rotations in the array.
+    // Consider index starting from 0, i.e. first character in the array is at 0 index.
+    // Use array traversing method.
+    // Do not use array indexation method or pointer offset method.
+    // Look at example for more clarity
+    int len = strlen(str);
+    char odd_str[len] , even_str[len];
+    rotation(str,even_str,len,even_index_rotations);
+    rotation(str,odd_str,len,odd_index_rotations);
+    for (int i = 0; i < len; i++)
+    {
+        if (!(i%2))
+        {
+            printf("%c",even_str[i]);
+        }
+        else
+        {
+            printf("%c",odd_str[i]);
+        }
         
+        
+    }
     
 }
 
-int main()
-{
+int main() {
 
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
-    int n;
-    char str[100];
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    char str[50];
     scanf("%[^\n]s",str);
-    scanf("%d",&n);
-    rotate_array(str,n);
-    
+    int odd,even;
+    scanf("%d%d",&even,&odd);
+    rotate_array(str,even,odd);
     return 0;
 }
