@@ -1,39 +1,44 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
+#!/bin/bash
 
-void rotate_array(char str[], int number_of_chars_to_rotate)
-{
-    int n = number_of_chars_to_rotate, len = strlen(str);
-    // Write code here to rotate characters in the array by number_of_chars_to_rotate
-    // Use array traversing method
-    // Do not use array indexation method or pointer offset method.
-        char *p = NULL;
-    p = &str[len-n];
-    printf("%d\n",len);
-    for(int i = 0;i<n;i++,p++)
-    {
-        printf("%c",*p);
-    }
-    p = &str[0];
-    for(int i = 0;i<len-n;i++,p++)
-    {
-        printf("%c",*p);
-    }
-        
-    
-}
+# Check if year is provided
+if [ -z "$1" ]; then
+  echo "Please provide a year as the first argument."
+  exit 1
+fi
 
-int main()
-{
+year="$1"
 
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
-    int n;
-    char str[100];
-    scanf("%[^\n]s",str);
-    scanf("%d",&n);
-    rotate_array(str,n);
-    
-    return 0;
-}
+# Check if at least one month is provided
+if [ $# -lt 2 ]; then
+  echo "Please provide one or more months as the remaining arguments."
+  exit 1
+fi
+
+# Shift the arguments to access the months
+shift
+
+# Loop through the months and display the calendar
+for month in "$@"
+do
+  # Convert month to number if it's given as a string
+  case "$month" in
+    Jan*) month_num="01";;
+    Feb*) month_num="02";;
+    Mar*) month_num="03";;
+    Apr*) month_num="04";;
+    May*) month_num="05";;
+    Jun*) month_num="06";;
+    Jul*) month_num="07";;
+    Aug*) month_num="08";;
+    Sep*) month_num="09";;
+    Oct*) month_num="10";;
+    Nov*) month_num="11";;
+    Dec*) month_num="12";;
+    [1-9]|1[0-2]) month_num="$month";;
+    *) echo "Invalid month: $month"
+       exit 1;;
+  esac
+
+  # Display the calendar for the month and year
+  cal "$month_num" "$year"
+done
