@@ -1,1 +1,0 @@
-{"name":"Local: nextdate","url":"d:\\all files\\c programming 1\\Hackerrank\\nextdate.c","tests":[{"id":1672666594667,"input":"2\n2020 01 01\n2020 01 31","output":"2020 01 02\n2020 02 01"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\all files\\c programming 1\\Hackerrank\\nextdate.c","group":"local","local":true}

@@ -12,39 +12,12 @@ void sort(char (*p)[][50],int n)
         for (int j = i+1; j < n; j++)
         {
 
-                x = **(*p +i); // first char of ith row
-                y = **(*p + j); // first char of jth row
-                if (x  == 32 +y || x - 32 == y)
+                if(strcasecmp(*(*p +i),*(*p+j))>0)
                 {
-                    if (y>x)
-                    {
-                        strcpy(temp,*(*p + i));
-                        strcpy(*(*p + i),*(*p +j));
-                        strcpy(*(*p + j),temp);
-                    }     
+                    strcpy(temp,*(*p + i));
+                    strcpy(*(*p + i),*(*p +j));
+                    strcpy(*(*p + j),temp);
                 }
-                else if(x == y)
-                {
-                cmp =  strcmp(*(*p + i),*(*p + j));
-                if (cmp>=1)
-                {
-                        strcpy(temp,*(*p + i));
-                        strcpy(*(*p + i),*(*p +j));
-                        strcpy(*(*p + j),temp);
-                }
-                else
-                {
-                    cmp =  strcmp(*(*p + i),*(*p + j));
-                    if (cmp>=1 && )
-                    {
-                        
-                    }
-                    
-                }
-                
-                
-                }
-
         }
     }
     for (int i = 0; i < n; i++)
