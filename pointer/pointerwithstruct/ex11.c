@@ -9,7 +9,11 @@ typedef struct {
 void scan(student *p)
 {
     printf("Enter name roll number and marks \n");
-    scanf("%s%d%d",p->name,&p->roll,&p->marks);
+    scanf("%[^\n]s %d%d",p->name,&p->roll,&p->marks);
+}
+void mark_increment(student *p)
+{
+
 }
 
 int main() 
@@ -20,6 +24,7 @@ int main()
         scan(&s[i]);
         printf("%s\n%d\n%d\n",s[i].name,s[i].roll,s[i].marks);
     }
+
     
     
 
