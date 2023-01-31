@@ -33,7 +33,7 @@ int main()
     int orthogonal[rows][rows];
     int (*r)[rows] = orthogonal;     
 
-    for (int i = 0; i < rows; i++)    // !check if matrix is orthogonal or not 
+    for (int i = 0; i < rows; i++)    // !check if matrix is orthogonal or not and also assign values to r
     {
         for (int j = 0; j < rows; j++)
         {
