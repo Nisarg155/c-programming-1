@@ -18,6 +18,6 @@ int main()
     int arr[n];
     for(int i = 0;i<n ;i++)
     scanf("%d",&arr[i]);
-    printf("%d",check(arr,n));
+    printf("%d\n",check(arr,n));
     return 0;
 }

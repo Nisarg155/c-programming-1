@@ -6,8 +6,8 @@ int main()
     int n1,n2,i=0,j=0,k=0;
     scanf("%d%d",&n1,&n2);
     int arr1[n1+1],arr2[n2+1],arr3[n1+n2],n3 = n1+n2;
-    arr1[n1] = 9999;
-    arr2[n2] = 9999;
+    arr1[n1] = __INT_MAX__;
+    arr2[n2] = __INT_MAX__;
     for (int i = 0; i < n1; i++)
     {
         printf("ele %d ",i+1);
